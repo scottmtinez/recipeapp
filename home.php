@@ -1,3 +1,5 @@
+<?php SESSION_START(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,18 +20,31 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-    <nav>
-        <ul class="search">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#news">Discover</a></li>
-            <li><a href="login.html">Sign in/Sign up</a></li>
-            <form>
-              <li>
-                <input class="searchBar" type="text" placeholder="Search" />
-              </li>
-            </form>
-        </ul>
-    </nav>
+<?php
+        if(isset($_SESSION['username'])){
+            $loginName = $_SESSION['username'];
+        }else{
+            $loginName = "Login/Sign up";      
+        }
+          
+?>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+        <!-- Nav Bar from home.html -->
+            <nav>
+                <ul class="search">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="discover.php">Discover</a></li>
+                    <li><a href="addRecipe.php">Add Recipes</a></li>
+                    <li><a href="favorites.php">My Favorites</a></li>
+                    <li><a href="login.php"><?php echo "$loginName" ?></a></li>
+                    <form>
+                    <li>
+                        <input class="searchBar" type="text" placeholder="Search" />
+                    </li>
+                    </form>
+                </ul>
+            </nav>
 
     <div class="topRecipes-row">
         <div class="main-picture">
