@@ -1,0 +1,92 @@
+/* LOGIN BOX */
+
+.loginForm{
+  width: 350px;
+    height: 270px;
+    background-color: rgb(0, 0, 78);        
+    border: 2px black solid;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10%;
+    margin-bottom: 325px;
+    display: block;
+    text-align: center;
+}
+
+.title{
+    margin-top: 40px;
+    color: white;
+    text-align: center;
+}
+
+label{
+  color: white;
+}
+
+.username{
+  margin-bottom: 5px;
+} 
+
+.password{
+  margin-bottom: 5px;
+}
+
+.email{
+  margin-bottom: 5px;
+}
+
+.loginBtn, .signupBtn{
+  background-color: whitesmoke;
+}
+
+.loginBtn:hover, .signupBtn:hover{
+  background-color: rgb(192, 192, 192);
+}
+
+
+
+/* SIGN UP BOX */
+.signupForm{
+  width: 350px;
+  height: 250px;
+    background-color: rgb(0, 0, 78);        
+    border: 2px black solid;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10%;
+    margin-bottom: 345px;
+    display: block;
+    text-align: center;
+}
+
+.signupBox{
+  display: none;
+}
+
+
+
+
+/* LINKS */
+.qlink{
+  color: lightgreen;
+  font-size: 10px;
+}
+
+.qlinks{
+  color: lightgrey;
+  text-decoration: none;
+}
+
+.qlinks:hover{
+  color: darkgray;
+  text-decoration: none;
+}
+
+.qlinks:active{
+  color: grey;
+  text-decoration: none;
+}
+
+.link{
+  text-decoration: none;
+}
