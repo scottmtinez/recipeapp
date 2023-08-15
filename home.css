@@ -1,0 +1,164 @@
+.topRecipes-row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.topRecipes-column {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    float: left;
+    width: 20%;
+    
+}
+
+.links {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline;
+}
+
+.links:hover{
+    color: black;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: white;
+    
+}
+
+footer {
+    background-color:  rgb(0, 0, 78);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(0, 0, 78);   
+}
+
+li {
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 100px;
+    text-decoration: none;
+    float: left;
+}
+
+li a:hover:not(.active) {
+    background-color: White;
+    color: black;
+}
+
+li a:active{
+  background-color: yellow;
+}
+
+.search input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 50px;
+    border: none;
+    font-size: 17px;
+}
+
+.search, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 10px;
+}
+
+.search input[type=text] {
+     border: 1px solid #ccc;
+}
+
+.main-picture{
+    background-image: url("https://images.unsplash.com/photo-1611601184963-9d1de9b79ff3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    width: 100%;
+    height: 500px;
+    margin-top: 2px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#r1Name, #r2Name, #r3Name, #r4Name, #r5Name{
+    background-color: black;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    border: solid black 2px;
+}
+
+#r1Name{
+    background-image: url("https://images.unsplash.com/photo-1613119719948-d53865658a88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80");
+}
+
+#r2Name{
+    background-image: url("https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=815&q=80");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#r3Name{
+    background-image: url("https://images.unsplash.com/photo-1623031843775-11ef477a7724?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGV2aWxlZCUyMGVnZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=60");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#r4Name{
+    background-image: url("https://images.unsplash.com/photo-1621790404813-df280c2de418?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+#r5Name{
+    background-image: url("https://images.unsplash.com/photo-1583743089695-4b816a340f82?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100%;
+}
+
+.h1-title{
+    font-size: 48px;
+    color: white;
+    position: relative;
+    left: 15px;
+    top: 15px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.h2-recipe{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    left: 15px;
+    top: -10px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+
