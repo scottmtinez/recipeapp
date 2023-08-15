@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Recipe App</title>
+    <!--<link rel="icon" type="image/x-icon" href="assets/imgs/img.png">-->
+    <!-- font icons -->
+    <!--<link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">-->
+    
+    <!-- Bootstrap + main styles -->
+    <link rel="stylesheet" href="discover.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav>
+        <ul class="search">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="recipe.html">Add Recipes</a></li>
+            <li><a href="login.html">Sign in/Sign up</a></li>
+            <li><input type="text" placeholder="Search" /></li>
+        </ul>
+    </nav>
+
+    <h2 id="discover-title">Discover</h2>
+
+    <div id="discover-search">
+        <input type="text" placeholder="Filter" id="filter-search" />
+    </div>
+
+    <div class="grid">
+        <div class="row" id="row-one">
+            <a href="recipe.html"><div class="container-image" id="cookies">
+                <h3 class="recipe-title" id="title-one">Sample Title (Cookies)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Cookies">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="steak">
+                <h3 class="recipe-title" id="title-two">Sample Title (Steak)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Steak">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="quesadilla">
+                <h3 class="recipe-title" id="title-three">Sample Title (Quesadilla)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Quesadilla">
+            </div></a>
+        </div>
+        <div class="row" id="row-two">
+            <a href="recipe.html"><div class="container-image" id="sushi">
+                <h3 class="recipe-title" id="title-four">Sample Title (Sushi)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Sushi">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="fruit punch">
+                <h3 class="recipe-title" id="title-five">Sample Title (Fruit Punch)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Fruit Punch">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="fruit salad">
+                <h3 class="recipe-title" id="title-six">Sample Title (Fruit Salad)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Fruit Salad">
+            </div></a>
+        </div>
+        <div class="row" id="row-three">
+            <a href="recipe.html"><div class="container-image" id="egg-fried rice">
+                <h3 class="recipe-title" id="title-seven">Sample Title (Egg-Fried Rice)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Egg-Fried Rice">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="cheeseburger">
+                <h3 class="recipe-title" id="title-eight">Sample Title (Cheeseburger)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Cheeseburger">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="pasta salad">
+                <h3 class="recipe-title" id="title-nine">Sample Title (Pasta Salad)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Pasta Salad">
+            </div></a>
+        </div>
+        <div class="row" id="row-four">
+            <a href="recipe.html"><div class="container-image" id="beer brats">
+                <h3 class="recipe-title" id="title-ten">Sample Title (Beer Brats)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Beer Brats">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="cucumber salad">
+                <h3 class="recipe-title" id="title-eleven">Sample Title (Cucumber Salad)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Cucumber Salad">
+            </div></a>
+            <a href="recipe.html"><div class="container-image" id="caesar salad">
+                <h3 class="recipe-title" id="title-twelve">Sample Title (Caesar Salad)</h3>
+                <img src="images/default-image.png" id="recipe-picture" alt="Caesar Salad">
+            </div></a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="links">
+            <p class="links"><font color="white">Follow us:</font></p>
+        </div>
+        <div class="links">
+            <a href="https://www.facebook.com"><font color="white">FaceBook</font></a>
+        </div>
+        <div class="links">
+            <a href="https://twitter.com"><font color="white">Twitter</font></a>
+        </div>
+        <div class="links">
+            <a href="https://www.instagram.com"><font color="white">Instagram</font></a>
+        </div>
+        <p class="links">
+            <font color="white">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script>
+            </font>
+        </p>
+    </footer>
+</body>
+</html>
