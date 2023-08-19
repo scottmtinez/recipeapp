@@ -1,3 +1,4 @@
+<?php SESSION_START(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,99 +7,168 @@
     <title>Recipe App</title>
     <!--<link rel="icon" type="image/x-icon" href="assets/imgs/img.png">-->
     <!-- font icons -->
-    <!--<link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">-->
     
     <!-- Bootstrap + main styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="discover.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <nav>
-        <ul class="search">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="discover.html">Discover</a></li>
-            <li><a href="recipe.html">Add Recipes</a></li>
-            <li><a href="login.html">Sign in/Sign up</a></li>
-            <li><input type="text" placeholder="Search" /></li>
-        </ul>
-    </nav>
+    <?php
+        if(isset($_SESSION['username'])){
+            $loginName = $_SESSION['username'];
+        }else{
+            $loginName = "Login/Sign up";      
+        }
+          
+    ?>
 
-    <h2 id="discover-title">Discover</h2>
+    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+        <!-- Nav Bar from home.html -->
+            <nav>
+                <ul class="search">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="discover.php">Discover</a></li>
+                    <li><a href="addRecipe.php">Add Recipes</a></li>
+                    <li><a href="favorites.php">My Favorites</a></li>
+                    <li><a href="login.php"><?php echo "$loginName" ?></a></li>
+                    <form>
+                    <li>
+                        <input class="searchBar" type="text" placeholder="Search" />
+                    </li>
+                    </form>
+                </ul>
+            </nav>
+
+
+    <h2 id="discover-title" style='text-decoration: underline;'>Discover</h2>
 
     <div id="discover-search">
-        <input type="text" placeholder="Filter" id="filter-search" />
+        <form>
+            <input type="text" placeholder="Filter" id="filter-search" />
+        </form>
     </div>
 
-    <div class="grid">
-        <div class="row" id="row-one">
-            <a href="recipe.html"><div class="container-image" id="cookies">
-                <h3 class="recipe-title" id="title-one">Sample Title (Cookies)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Cookies">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="steak">
-                <h3 class="recipe-title" id="title-two">Sample Title (Steak)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Steak">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="quesadilla">
-                <h3 class="recipe-title" id="title-three">Sample Title (Quesadilla)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Quesadilla">
-            </div></a>
-        </div>
-        <div class="row" id="row-two">
-            <a href="recipe.html"><div class="container-image" id="sushi">
-                <h3 class="recipe-title" id="title-four">Sample Title (Sushi)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Sushi">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="fruit punch">
-                <h3 class="recipe-title" id="title-five">Sample Title (Fruit Punch)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Fruit Punch">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="fruit salad">
-                <h3 class="recipe-title" id="title-six">Sample Title (Fruit Salad)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Fruit Salad">
-            </div></a>
-        </div>
-        <div class="row" id="row-three">
-            <a href="recipe.html"><div class="container-image" id="egg-fried rice">
-                <h3 class="recipe-title" id="title-seven">Sample Title (Egg-Fried Rice)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Egg-Fried Rice">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="cheeseburger">
-                <h3 class="recipe-title" id="title-eight">Sample Title (Cheeseburger)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Cheeseburger">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="pasta salad">
-                <h3 class="recipe-title" id="title-nine">Sample Title (Pasta Salad)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Pasta Salad">
-            </div></a>
-        </div>
-        <div class="row" id="row-four">
-            <a href="recipe.html"><div class="container-image" id="beer brats">
-                <h3 class="recipe-title" id="title-ten">Sample Title (Beer Brats)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Beer Brats">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="cucumber salad">
-                <h3 class="recipe-title" id="title-eleven">Sample Title (Cucumber Salad)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Cucumber Salad">
-            </div></a>
-            <a href="recipe.html"><div class="container-image" id="caesar salad">
-                <h3 class="recipe-title" id="title-twelve">Sample Title (Caesar Salad)</h3>
-                <img src="images/default-image.png" id="recipe-picture" alt="Caesar Salad">
-            </div></a>
-        </div>
-    </div>
+    <!-- BODY THAT PRINTS OUT THE USERS TABLE -->
+    <!-- PHP CODE -->
+    <?php
+        //Displays users MySQL Table
+            $connection = mySqli_connect("localhost", "root", "", "recipeapp");
+            $sql = "SELECT * FROM recipes";
+            $result = $connection->query($sql);
+
+            if($result->num_rows > 0 ){
+                while($row = $result->fetch_assoc()){
+                    $title = $row['title'];
+                    
+                    echo 
+                    "
+                        <div class='recipe-container'>
+                            <div class='picture-holder'></div>
+
+                            <div class='recipe-info' id='holder'>
+                                <h1 class='rec-title' id='$title'>".$row["title"]."</h1>
+                                <p class='prepTime'>Prep Time: ".$row["PrepTime"]."</p>
+                                <p class='cookTime'>Cook Time: ".$row["cookTime"]."</p>
+                                <p class='recipeType'>Recipe Type: ".$row["recipeType"]."</p>
+                                <p class='originalCreator'>Creator: ".$row["originalCreator"]."</p>
+                                <p class='yield'>Yield's: ".$row["yield"]."</p>
+                                <p class='dateAdded'>Date Posted: ".$row["dateAdded"]."</p>
+                                <!-- <p class='dateAdded'>Ingredientes: ".$row["ingredientes"]."</p> --> 
+                                <form method='POST' action='recipeAddedToFavorites.php'>
+                                    <input type='hidden' name='title' value='".$row["title"]."'>
+                                    <input type='hidden' name='prepTime' value='".$row["PrepTime"]."'>
+                                    <input type='hidden' name='cookTime' value='".$row["cookTime"]."'>
+                                    <input type='hidden' name='recipeType' value='".$row["recipeType"]."'>
+                                    <input type='hidden' name='originalCreator' value='".$row["originalCreator"]."'>
+                                    <input type='hidden' name='yield' value='".$row["yield"]."'>
+                                    <input type='hidden' name='dateAdded' value='".$row["dateAdded"]."'>
+                                    <input type='hidden' name='ingredientes' value='".$row["ingredientes"]."'>
+                                    <input class='addToFav' type='submit' value='Add to Favorites'>
+                                </form>
+                                <form method='POST' action='displayRecipes.php'>
+                                    <input type='hidden' name='title' value='".$row["title"]."'>
+                                    <input type='hidden' name='prepTime' value='".$row["PrepTime"]."'>
+                                    <input type='hidden' name='cookTime' value='".$row["cookTime"]."'>
+                                    <input type='hidden' name='recipeType' value='".$row["recipeType"]."'>
+                                    <input type='hidden' name='originalCreator' value='".$row["originalCreator"]."'>
+                                    <input type='hidden' name='yield' value='".$row["yield"]."'>
+                                    <input type='hidden' name='dateAdded' value='".$row["dateAdded"]."'>
+                                    <input type='hidden' name='ingredientes' value='".$row["ingredientes"]."'>
+                                    <input class='addToFavorites' type='submit' value='View Recipe'>
+                                </form>
+                            </div>
+                        </div>
+                    ";
+                }
+            }else{
+                echo "<h1 style='text-align: center;'>Users DB is empty. </h1>";
+            }
+    ?>
+    <script src="jquery.js"></script>
+    <script>
+
+        
+           
+        var data = {};
+        data = document.getElementById("filter-search").value;
+
+        (function() {
+
+            var $recipes = $('.recipe-container');
+            var $search = $('#filter-search');
+            var $searchBar = $('#submit');
+            document.addEventListener('e', filter);
+            console.log($searchBar);
+            var cache = [];
+            $search.load(filter);
+
+            $recipes.each(function() {
+                cache.push({
+                element: this,
+                text: this.children[1].children[0].textContent.toLowerCase()
+                });
+                //console.log(this.children[1].children[0].textContent);
+                
+
+            });
+            console.log(cache);
+            function filter() {
+                var query = this.value.trim().toLowerCase();
+                //console.log(this.value);
+                cache.forEach(function(recipe) {
+                    var index = 0;
+
+                    if (query) {
+                        index = recipe.text.indexOf(query);
+                    }
+                    
+                    recipe.element.style.display = index === -1 ? 'none' : ''; // Show / hide element
+                });
+            }
+            if ('oninput' in $search[0]) { // Trigger event
+                $search.on('input', filter);
+            } else {
+                //$search.on('keyup', filter);
+                $search.on('load', filter);
+                $searchBar.on('submit', filter);
+            }
+
+        }());
+    </script>
 
     <footer>
         <div class="links">
             <p class="links"><font color="white">Follow us:</font></p>
         </div>
         <div class="links">
-            <a href="https://www.facebook.com"><font color="white">FaceBook</font></a>
+            <a href="https://www.facebook.com"><font color="white"><i class="bi bi-facebook"></i></font></a>
         </div>
         <div class="links">
-            <a href="https://twitter.com"><font color="white">Twitter</font></a>
+            <a href="https://twitter.com"><font color="white"><i class="bi bi-twitter"></i></font></a>
         </div>
         <div class="links">
-            <a href="https://www.instagram.com"><font color="white">Instagram</font></a>
+            <a href="https://www.instagram.com"><font color="white"><i class="bi bi-instagram"></i></font></a>
         </div>
         <p class="links">
             <font color="white">

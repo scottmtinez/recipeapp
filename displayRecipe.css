@@ -1,0 +1,65 @@
+.recipe-container{
+    width: 50%;
+    height: 25%;
+    margin: auto;
+    border: solid black 2px;
+    margin-bottom: 10px;
+    background-color: tan;
+}
+
+.picture-holder{
+    width: 150px;
+    height: 150px;
+    margin-top: 7%;
+    margin-left: 15px;
+    border: solid black 1px;
+    border-radius: 100%;
+    display: inline;
+    float: left;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/1996/1996055.png");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 110%;
+    background-color: transparent;
+}
+
+.recipe-info{
+    text-align: left;
+    padding-left: 200px;
+}
+
+.link{
+    text-decoration:none;
+    color: rgb(0, 0, 78);
+}
+
+.link:hover{
+    color:purple;
+}
+
+.goBack{
+    height: 25px;
+    width: 175px;
+    color:black;
+    margin-top: -10px;
+    float: left;
+    background-color: transparent;
+}
+
+.goBack:hover{
+    height: 26px;
+    width: 175px;
+    color:black;
+    margin-top: -10px;
+    float: left;
+    background-color: transparent;
+}
+
+.goBack:active{
+    height: 26px;
+    width: 175px;
+    color:black;
+    margin-top: -10px;
+    float: left;
+    background-color: transparent;
+}

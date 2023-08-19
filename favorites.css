@@ -1,3 +1,4 @@
+
 .topRecipes-row::after {
     content: "";
     clear: both;
@@ -120,6 +121,7 @@ li a:active{
     border: solid black 2px;
     margin-bottom: 10px;
     background-color: tan;
+    margin-top: 10px;
 }
 
 .picture-holder{
@@ -138,7 +140,7 @@ li a:active{
     background-color: transparent;
 }
 
-.addToFav, .addToFavorites{
+.addToFav, .addToFavorites, .removeRecipe{
     height: 25px;
     width: 150px;
     color:black;
@@ -147,7 +149,7 @@ li a:active{
     background-color: transparent;
 }
 
-.addToFav:hover, .addToFavorites:hover{
+.addToFav:hover, .addToFavorites:hover, .removeRecipe:hover{
     height: 26px;
     width: 151px;
     color:black;
@@ -156,7 +158,7 @@ li a:active{
     background-color: transparent;
 }
 
-.addToFav:active, .addToFavorites:active{
+.addToFav:active, .addToFavorites:active, .removeRecipe:active{
     height: 26px;
     width: 151px;
     color:black;

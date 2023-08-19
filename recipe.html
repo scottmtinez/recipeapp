@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Recipe App</title>
+    <!--<link rel="icon" type="image/x-icon" href="assets/imgs/img.png">-->
+    <!-- font icons -->
+    <!--<link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">-->
+    
+    <!-- Bootstrap + main styles -->
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav>
+        <ul class="search">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="recipe.html">Add Recipes</a></li>
+            <li><a href="login.html">Sign in/Sign up</a></li>
+            <li><input type="text" placeholder="Search" /></li>
+        </ul>
+    </nav>
+
+    <form>
+        <div id = "titleSpace">
+            <input id="recipe-title" placeholder = "[Recipe title here]" type="text">
+        </div>
+    <div class="container">
+        <div id="container-image">
+            <img src="images/default-image.png" alt="Recipe photo" id="recipe-picture">
+        </div>
+        <div id="container-text">
+            
+            <textarea class="section" id="introduction-title" placeholder="Introduction:" rows="10" cols="125"></textarea>
+                <!--<p id="introduction-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></h3>
+                
+            <h3 class="section" id="ingredients-title"><em>Ingredients and Equipment Required: </em>
+                <ul id="ingredients-content">
+                    <li>Sample text</li>
+                    <li>Sample text</li>
+                    <li>Sample text</li>
+                    <li>Sample text</li>
+                    <li>Sample text</li>
+                </ul>
+            </h3>
+            -->
+            <textarea class="section" id="ingredients-title" placeholder="Add Ingredients and separate them by the enter key" rows="10" cols="125"></textarea>
+        </div>
+    </div>
+    
+    <!-- <h3 class="section" id="steps-title"><em>Steps:</em><p id="steps-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></h3>
+    -->
+    <textarea class="section" id="steps-title" placeholder="Steps:" rows="15" cols="200"></textarea>    
+    <input id = "submitButton" type="submit">
+</form>
+
+    <footer>
+        <div class="links">
+            <p class="links"><font color="white">Follow us:</font></p>
+        </div>
+        <div class="links">
+            <a href="https://www.facebook.com"><font color="white">FaceBook</font></a>
+        </div>
+        <div class="links">
+            <a href="https://twitter.com"><font color="white">Twitter</font></a>
+        </div>
+        <div class="links">
+            <a href="https://www.instagram.com"><font color="white">Instagram</font></a>
+        </div>
+        <p class="links">
+            <font color="white">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script>
+            </font>
+        </p>
+    </footer>
+</body>
+</html>
